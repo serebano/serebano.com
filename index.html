@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sergiu Toderascu — Software Engineer</title>
+<meta name="description" content="Sergiu Toderascu — software engineer building mobile apps and developer tooling. Operating entity: SERGIU TODERASCU, II." />
+<meta name="author" content="Sergiu Toderascu" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230b0d12'/%3E%3Ctext x='50' y='72' font-family='ui-monospace,monospace' font-size='62' font-weight='600' text-anchor='middle' fill='%23e6e9ef'%3ES%3C/text%3E%3C/svg%3E" />
+<style>
+  :root{
+    --bg:#0b0d12; --ink:#e6e9ef; --muted:#8b94a4; --dim:#5b6473;
+    --line:#1c2230; --accent:#cfe9d8; --accent2:#9fb6d1;
+    --max:760px; --mono:ui-monospace,"SF Mono",SFMono,Menlo,Consolas,monospace;
+  }
+  @media (prefers-color-scheme: light){
+    :root{ --bg:#fbfbf9; --ink:#11151c; --muted:#5a6473; --dim:#9aa3b2;
+      --line:#e7e9ec; --accent:#0a7d4f; --accent2:#2a5db0; }
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--bg); color:var(--ink);
+    font:17px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,system-ui,sans-serif;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  }
+  a{color:inherit; text-decoration:none; border-bottom:1px solid color-mix(in oklab,var(--accent) 55%,transparent); transition:border-color .15s}
+  a:hover{border-color:var(--accent)}
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 26px}
+
+  /* masthead */
+  .mast{display:flex; align-items:baseline; justify-content:space-between; padding:26px 0; border-bottom:1px solid var(--line)}
+  .mast .name{font-weight:600; letter-spacing:-.01em}
+  .mast .meta{font-family:var(--mono); font-size:.8rem; color:var(--muted); display:flex; gap:18px; flex-wrap:wrap}
+  .mast .meta a{border:0}
+  .mast .meta a:hover{color:var(--accent)}
+
+  /* hero */
+  .hero{padding:96px 0 56px}
+  .hero h1{font-size:clamp(2.1rem,6vw,3.4rem); line-height:1.1; letter-spacing:-.025em; font-weight:700; margin:0}
+  .hero h1 em{font-style:normal; color:var(--muted)}
+  .hero p.lede{max-width:560px; color:var(--muted); font-size:1.12rem; margin:28px 0 0; line-height:1.65}
+
+  /* generic section */
+  section{padding:54px 0; border-top:1px solid var(--line)}
+  .kicker{font-family:var(--mono); font-size:.74rem; letter-spacing:.14em; text-transform:uppercase; color:var(--dim); margin:0 0 18px}
+  h2{font-size:1.4rem; letter-spacing:-.01em; margin:0 0 20px; font-weight:600}
+  p.body{color:var(--muted); font-size:1.04rem; margin:0 0 16px}
+  p.body:last-child{margin-bottom:0}
+  p.body strong{color:var(--ink); font-weight:600}
+  p.body a{color:var(--accent2)}
+
+  /* prose rows (about / facts) */
+  .rows{display:grid; gap:0; margin-top:6px}
+  .rows .r{display:grid; grid-template-columns:128px 1fr; gap:20px; padding:13px 0; border-bottom:1px solid var(--line); font-size:.98rem}
+  .rows .r:last-child{border-bottom:0}
+  .rows .k{color:var(--dim); font-family:var(--mono); font-size:.82rem; padding-top:2px}
+  .rows .v{color:var(--ink)}
+  .rows .v a{color:var(--accent2)}
+  @media (max-width:520px){ .rows .r{grid-template-columns:1fr; gap:4px} .rows .k{padding-top:0} }
+
+  /* project index */
+  .idx{margin:0; padding:0; list-style:none}
+  .idx li{display:grid; grid-template-columns:1fr auto; gap:18px; align-items:baseline; padding:18px 0; border-bottom:1px solid var(--line); transition:padding-left .18s}
+  .idx li:hover{padding-left:6px}
+  .idx a{border:0}
+  .idx .pn{font-family:var(--mono); font-weight:600; font-size:1.05rem}
+  .idx .pd{color:var(--muted); font-size:.96rem; margin-top:5px; max-width:48ch}
+  .idx .pm{font-family:var(--mono); font-size:.78rem; color:var(--dim); white-space:nowrap; text-align:right}
+  .idx .pm .lang{display:block; color:var(--accent2)}
+  @media (max-width:520px){ .idx li{grid-template-columns:1fr} .idx .pm{text-align:left; margin-top:6px} }
+
+  /* entity card */
+  .entity{background:color-mix(in oklab,var(--accent) 4%,transparent); border:1px solid var(--line); border-radius:14px; padding:30px; margin-top:8px}
+  .entity .title{font-size:1.12rem; font-weight:600; margin:0}
+  .entity .sub{color:var(--muted); font-size:.92rem; margin:4px 0 22px; font-family:var(--mono)}
+
+  /* contact */
+  .contact{padding:80px 0 70px; border-top:1px solid var(--line)}
+  .contact h2{font-size:clamp(1.6rem,4vw,2.2rem); letter-spacing:-.02em; margin-bottom:14px}
+  .contact p{color:var(--muted); max-width:520px; margin:0 0 26px}
+  .links{display:flex; gap:26px; flex-wrap:wrap; font-family:var(--mono); font-size:.92rem}
+  .links a{border:0; color:var(--accent2)}
+  .links a:hover{color:var(--accent)}
+
+  footer{border-top:1px solid var(--line); padding:30px 0 50px; color:var(--dim); font-size:.84rem; line-height:1.7}
+  footer .wrap{display:flex; justify-content:space-between; gap:24px; flex-wrap:wrap}
+  footer .legal{max-width:520px}
+  footer .legal strong{color:var(--muted)}
+
+  .fade{opacity:0; transform:translateY(10px); transition:opacity .5s ease, transform .5s ease}
+  .fade.in{opacity:1; transform:none}
+  @media (prefers-reduced-motion: reduce){ .fade{opacity:1; transform:none; transition:none} }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="mast">
+    <span class="name">Sergiu Toderascu</span>
+    <span class="meta">
+      <a href="https://github.com/serebano" target="_blank" rel="noopener">github</a>
+      <a href="https://orcid.org/0009-0006-2072-039X" target="_blank" rel="noopener">orcid</a>
+      <a href="https://twitter.com/MrSerebano" target="_blank" rel="noopener">@MrSerebano</a>
+    </span>
+  </div>
+</div>
+
+<main class="wrap">
+  <header class="hero">
+    <h1>Software engineer<br><em>building things by breaking them.</em></h1>
+    <p class="lede">I'm Sergiu Toderascu — I ship mobile apps and developer tooling from Chisinau, Moldova. I learn systems by taking them apart, then put them back together simpler.</p>
+  </header>
+
+  <section id="about" class="fade">
+    <p class="kicker">About</p>
+    <p class="body">My work moves between two worlds. On the <strong>mobile</strong> side, I build Capacitor plugins that bridge web apps to native iOS and iCloud, and native SwiftUI components engineered for performance at scale. On the <strong>Tooling</strong> side, I maintain <a href="https://github.com/serebano/debuno" target="_blank" rel="noopener">debuno</a> — bringing Deno-style module resolution to Bun and Node — with a family of RPC and error-handling libraries around it.</p>
+    <p class="body">I've been on GitHub since 2011. The thread running through ninety-odd public repositories is the same: explore by building, then leave the tool behind for the next person.</p>
+    <div class="rows">
+      <div class="r"><span class="k">role</span><span class="v">Software Engineer</span></div>
+      <div class="r"><span class="k">focus</span><span class="v">Mobile · Tooling · Developer Experience</span></div>
+      <div class="r"><span class="k">studio</span><span class="v">BusyBrothers</span></div>
+      <div class="r"><span class="k">location</span><span class="v">Chisinau, Republic of Moldova</span></div>
+      <div class="r"><span class="k">github</span><span class="v"><a href="https://github.com/serebano" target="_blank" rel="noopener">@serebano</a> · member since 2011</span></div>
+      <div class="r"><span class="k">contact</span><span class="v"><a href="mailto:mr.serebano@gmail.com">mr.serebano@gmail.com</a></span></div>
+    </div>
+  </section>
+
+  <section id="work" class="fade">
+    <p class="kicker">Selected work</p>
+    <ul class="idx">
+      <li>
+        <a href="https://github.com/serebano/debuno" target="_blank" rel="noopener">
+          <span class="pn">debuno</span>
+          <span class="pd">Bring Deno module resolution to Bun &amp; Node, with RPC and error-handling libraries around it.</span>
+        </a>
+        <span class="pm"><span class="lang">JavaScript</span>runtime</span>
+      </li>
+      <li>
+        <a href="https://github.com/serebano/debuno-rpc" target="_blank" rel="noopener">
+          <span class="pn">debuno-rpc</span>
+          <span class="pd">Typed RPC layer for the debuno ecosystem.</span>
+        </a>
+        <span class="pm"><span class="lang">TypeScript</span>library</span>
+      </li>
+      <li>
+        <a href="https://github.com/serebano/SwiftUI-LazyPages" target="_blank" rel="noopener">
+          <span class="pn">SwiftUI-LazyPages</span>
+          <span class="pd">Performant, lazy-loaded paging view for SwiftUI handling large datasets efficiently.</span>
+        </a>
+        <span class="pm"><span class="lang">Swift</span>iOS</span>
+      </li>
+      <li>
+        <a href="https://github.com/serebano/capacitor-plugin-icloud-kv" target="_blank" rel="noopener">
+          <span class="pn">capacitor-plugin-icloud-kv</span>
+          <span class="pd">Capacitor plugin for iCloud key-value storage.</span>
+        </a>
+        <span class="pm"><span class="lang">Swift</span>native bridge</span>
+      </li>
+      <li>
+        <a href="https://github.com/serebano/capacitor-icloud-preferences" target="_blank" rel="noopener">
+          <span class="pn">capacitor-icloud-preferences</span>
+          <span class="pd">Sync app preferences through iCloud via Capacitor.</span>
+        </a>
+        <span class="pm"><span class="lang">Swift</span>native bridge</span>
+      </li>
+      <li>
+        <a href="https://github.com/serebano/capacitor-env-info" target="_blank" rel="noopener">
+          <span class="pn">capacitor-env-info</span>
+          <span class="pd">Environment and device info exposed to Capacitor web apps.</span>
+        </a>
+        <span class="pm"><span class="lang">Swift</span>native bridge</span>
+      </li>
+      <li>
+        <a href="https://github.com/serebano/upi" target="_blank" rel="noopener">
+          <span class="pn">upi</span>
+          <span class="pd">Universal Programming Interface.</span>
+        </a>
+        <span class="pm"><span class="lang">TypeScript</span>experiment</span>
+      </li>
+      <li>
+        <a href="https://github.com/serebano/bitbox" target="_blank" rel="noopener">
+          <span class="pn">bitbox</span>
+          <span class="pd">A reactive state toolkit.</span>
+        </a>
+        <span class="pm"><span class="lang">JavaScript</span>library</span>
+      </li>
+      <li>
+        <a href="https://github.com/BusyBrothers/claude-code-web-client" target="_blank" rel="noopener">
+          <span class="pn">claude-code-web-client</span>
+          <span class="pd">A claude.ai/code-style web client for Claude Code with live Remote Control.</span>
+        </a>
+        <span class="pm"><span class="lang">TypeScript</span>BusyBrothers</span>
+      </li>
+      <li>
+        <a href="https://github.com/serebano/ttdlapp" target="_blank" rel="noopener">
+          <span class="pn">ttdlapp</span>
+          <span class="pd">TTDL — a focused task application.</span>
+        </a>
+        <span class="pm"><span class="lang">HTML</span>app</span>
+      </li>
+    </ul>
+    <p class="body" style="margin-top:22px; font-size:.95rem"><a href="https://github.com/serebano?tab=repositories" target="_blank" rel="noopener">See all 96 repositories →</a></p>
+  </section>
+
+  <section id="company" class="fade">
+    <p class="kicker">Company &amp; legal entity</p>
+    <p class="body">Commercial work is conducted through a registered legal entity. The details below are published openly for verification — including Apple Developer Program enrollment, which requires a matching company website and D-U-N-S® number.</p>
+    <div class="entity">
+      <p class="title">SERGIU TODERASCU, II</p>
+      <p class="sub">Registered legal entity · sole proprietorship</p>
+      <div class="rows">
+        <div class="r"><span class="k">legal name</span><span class="v">SERGIU TODERASCU, II</span></div>
+        <div class="r"><span class="k">d-u-n-s®</span><span class="v" style="font-family:var(--mono)">933919838</span></div>
+        <div class="r"><span class="k">address</span><span class="v">21/1, apt. 74, Nicolae Dimo str.</span></div>
+        <div class="r"><span class="k">city</span><span class="v">Chisinau</span></div>
+        <div class="r"><span class="k">postcode</span><span class="v" style="font-family:var(--mono)">MD-2068</span></div>
+        <div class="r"><span class="k">country</span><span class="v">Republic of Moldova</span></div>
+      </div>
+    </div>
+    <div class="rows" style="margin-top:24px">
+      <div class="r"><span class="k">studio</span><span class="v"><a href="https://github.com/BusyBrothers" target="_blank" rel="noopener">BusyBrothers</a> — independent software studio</span></div>
+      <div class="r"><span class="k">org</span><span class="v"><a href="https://github.com/tictapp" target="_blank" rel="noopener">tictapp</a></span></div>
+      <div class="r"><span class="k">orcid</span><span class="v"><a href="https://orcid.org/0009-0006-2072-039X" target="_blank" rel="noopener">0009-0006-2072-039X</a></span></div>
+    </div>
+  </section>
+
+  <section class="contact fade" style="border-top:1px solid var(--line)">
+    <p class="kicker">Contact</p>
+    <h2>Let's build something.</h2>
+    <p>Open to freelance engineering, mobile plugin work, and tooling collaborations. Remote-friendly, based in Chisinau.</p>
+    <div class="links">
+      <a href="mailto:mr.serebano@gmail.com">mr.serebano@gmail.com</a>
+      <a href="https://github.com/serebano" target="_blank" rel="noopener">github.com/serebano</a>
+      <a href="https://twitter.com/MrSerebano" target="_blank" rel="noopener">@MrSerebano</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="legal">
+      © <span id="yr">2026</span> Sergiu Toderascu.<br>
+      Operating entity: <strong>SERGIU TODERASCU, II</strong> · D-U-N-S® <span style="font-family:var(--mono)">933919838</span> · 21/1, apt. 74, Nicolae Dimo str., Chisinau, MD-2068, Republic of Moldova.
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {rootMargin:'0px 0px -6% 0px'});
+  document.querySelectorAll('.fade').forEach(function(el){ io.observe(el); });
+</script>
+</body>
+</html>
