@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Sergiu Toderascu — Software Engineer</title>
-<meta name="description" content="Sergiu Toderascu — software engineer building mobile apps and developer tooling. Operating entity: SERGIU TODERASCU, II." />
+<title>Sergiu Toderascu — Software Engineer · Developer Tooling &amp; AI</title>
+<meta name="description" content="Sergiu Toderascu — software engineer building developer tooling and AI engineering systems. Lead of Busymate DevTools (busymate.dev). Operating entity: SERGIU TODERASCU, II." />
 <meta name="author" content="Sergiu Toderascu" />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230b0d12'/%3E%3Ctext x='50' y='72' font-family='ui-monospace,monospace' font-size='62' font-weight='600' text-anchor='middle' fill='%23e6e9ef'%3ES%3C/text%3E%3C/svg%3E" />
 <style>
@@ -28,20 +28,21 @@
   a:hover{border-color:var(--accent)}
   .wrap{max-width:var(--max); margin:0 auto; padding:0 26px}
 
-  /* masthead */
   .mast{display:flex; align-items:baseline; justify-content:space-between; padding:26px 0; border-bottom:1px solid var(--line)}
   .mast .name{font-weight:600; letter-spacing:-.01em}
   .mast .meta{font-family:var(--mono); font-size:.8rem; color:var(--muted); display:flex; gap:18px; flex-wrap:wrap}
   .mast .meta a{border:0}
   .mast .meta a:hover{color:var(--accent)}
 
-  /* hero */
   .hero{padding:96px 0 56px}
   .hero h1{font-size:clamp(2.1rem,6vw,3.4rem); line-height:1.1; letter-spacing:-.025em; font-weight:700; margin:0}
   .hero h1 em{font-style:normal; color:var(--muted)}
-  .hero p.lede{max-width:560px; color:var(--muted); font-size:1.12rem; margin:28px 0 0; line-height:1.65}
+  .hero p.lede{max-width:580px; color:var(--muted); font-size:1.12rem; margin:28px 0 0; line-height:1.65}
 
-  /* generic section */
+  .stats{display:flex; gap:38px; flex-wrap:wrap; margin-top:42px}
+  .stat .n{font-size:1.04rem; font-weight:600; color:var(--ink)}
+  .stat .l{color:var(--dim); font-size:.82rem; font-family:var(--mono); margin-top:3px; letter-spacing:.02em}
+
   section{padding:54px 0; border-top:1px solid var(--line)}
   .kicker{font-family:var(--mono); font-size:.74rem; letter-spacing:.14em; text-transform:uppercase; color:var(--dim); margin:0 0 18px}
   h2{font-size:1.4rem; letter-spacing:-.01em; margin:0 0 20px; font-weight:600}
@@ -50,7 +51,6 @@
   p.body strong{color:var(--ink); font-weight:600}
   p.body a{color:var(--accent2)}
 
-  /* prose rows (about / facts) */
   .rows{display:grid; gap:0; margin-top:6px}
   .rows .r{display:grid; grid-template-columns:128px 1fr; gap:20px; padding:13px 0; border-bottom:1px solid var(--line); font-size:.98rem}
   .rows .r:last-child{border-bottom:0}
@@ -59,23 +59,25 @@
   .rows .v a{color:var(--accent2)}
   @media (max-width:520px){ .rows .r{grid-template-columns:1fr; gap:4px} .rows .k{padding-top:0} }
 
-  /* project index */
-  .idx{margin:0; padding:0; list-style:none}
-  .idx li{display:grid; grid-template-columns:1fr auto; gap:18px; align-items:baseline; padding:18px 0; border-bottom:1px solid var(--line); transition:padding-left .18s}
-  .idx li:hover{padding-left:6px}
-  .idx a{border:0}
-  .idx .pn{font-family:var(--mono); font-weight:600; font-size:1.05rem}
-  .idx .pd{color:var(--muted); font-size:.96rem; margin-top:5px; max-width:48ch}
-  .idx .pm{font-family:var(--mono); font-size:.78rem; color:var(--dim); white-space:nowrap; text-align:right}
-  .idx .pm .lang{display:block; color:var(--accent2)}
-  @media (max-width:520px){ .idx li{grid-template-columns:1fr} .idx .pm{text-align:left; margin-top:6px} }
+  /* feature spotlight */
+  .feature{border:1px solid var(--line); border-radius:16px; padding:30px; margin-bottom:18px}
+  .feature .ftop{display:flex; align-items:baseline; justify-content:space-between; gap:16px; flex-wrap:wrap}
+  .feature .fname{font-size:1.25rem; font-weight:600; letter-spacing:-.01em}
+  .feature .furl{font-family:var(--mono); font-size:.92rem; color:var(--accent2)}
+  .feature .fdesc{color:var(--muted); font-size:1.04rem; margin:14px 0 22px; max-width:56ch}
+  .feature ul{margin:0; padding:0; list-style:none}
+  .feature li{display:grid; grid-template-columns:18px 1fr; gap:12px; padding:11px 0; border-top:1px solid var(--line); color:var(--muted); font-size:.98rem}
+  .feature li:first-child{border-top:0}
+  .feature li .b{color:var(--accent)}
+  .feature li strong{color:var(--ink); font-weight:600}
 
-  /* entity card */
+  .also{font-size:.96rem; color:var(--muted); margin-top:6px}
+  .also a{color:var(--accent2)}
+
   .entity{background:color-mix(in oklab,var(--accent) 4%,transparent); border:1px solid var(--line); border-radius:14px; padding:30px; margin-top:8px}
   .entity .title{font-size:1.12rem; font-weight:600; margin:0}
   .entity .sub{color:var(--muted); font-size:.92rem; margin:4px 0 22px; font-family:var(--mono)}
 
-  /* contact */
   .contact{padding:80px 0 70px; border-top:1px solid var(--line)}
   .contact h2{font-size:clamp(1.6rem,4vw,2.2rem); letter-spacing:-.02em; margin-bottom:14px}
   .contact p{color:var(--muted); max-width:520px; margin:0 0 26px}
@@ -99,6 +101,7 @@
   <div class="mast">
     <span class="name">Sergiu Toderascu</span>
     <span class="meta">
+      <a href="https://busymate.dev" target="_blank" rel="noopener">busymate.dev</a>
       <a href="https://github.com/serebano" target="_blank" rel="noopener">github</a>
       <a href="https://orcid.org/0009-0006-2072-039X" target="_blank" rel="noopener">orcid</a>
       <a href="https://twitter.com/MrSerebano" target="_blank" rel="noopener">@MrSerebano</a>
@@ -108,104 +111,53 @@
 
 <main class="wrap">
   <header class="hero">
-    <h1>Software engineer<br><em>building things by breaking them.</em></h1>
-    <p class="lede">I'm Sergiu Toderascu — I ship mobile apps and developer tooling from Chisinau, Moldova. I learn systems by taking them apart, then put them back together simpler.</p>
+    <h1>Software engineer<br><em>building developer tooling &amp; AI systems.</em></h1>
+    <p class="lede">I build developer tooling and AI-powered engineering workflows for teams shipping across mobile, web, and backend. Currently leading <strong style="color:var(--ink)">Busymate DevTools</strong> — an AI-first platform that captures, inspects, mocks, and replays HTTPS traffic from every device into one live dashboard.</p>
+    <div class="stats">
+      <div class="stat"><div class="n">15+ years</div><div class="l">building software</div></div>
+      <div class="stat"><div class="n">Developer tooling</div><div class="l">mobile · web · runtime</div></div>
+      <div class="stat"><div class="n">AI engineering</div><div class="l">agents · MCP · integrations</div></div>
+      <div class="stat"><div class="n">Busymate DevTools</div><div class="l">current work · busymate.dev</div></div>
+    </div>
   </header>
 
   <section id="about" class="fade">
     <p class="kicker">About</p>
-    <p class="body">My work moves between two worlds. On the <strong>mobile</strong> side, I build Capacitor plugins that bridge web apps to native iOS and iCloud, and native SwiftUI components engineered for performance at scale. On the <strong>Tooling</strong> side, I maintain <a href="https://github.com/serebano/debuno" target="_blank" rel="noopener">debuno</a> — bringing Deno-style module resolution to Bun and Node — with a family of RPC and error-handling libraries around it.</p>
-    <p class="body">I've been on GitHub since 2011. The thread running through ninety-odd public repositories is the same: explore by building, then leave the tool behind for the next person.</p>
+    <p class="body">I'm a software engineer focused on <strong>developer tooling</strong> and <strong>AI engineering</strong> — building the systems that make complex software legible and controllable. The through-line of my work is closing the loop between what a system is doing and what you can observe and change about it: traffic inspection, runtime tooling, and agent-ready integrations.</p>
+    <p class="body">I lead development of <a href="https://busymate.dev" target="_blank" rel="noopener">Busymate DevTools</a>, an AI-first platform for capturing, inspecting, mocking, and replaying HTTPS traffic across iPhones, Android, browsers, and device farms — unified in one realtime dashboard, with an AI teammate (BusyBro), a large MCP tool surface, REST/WebSocket APIs, and enterprise-grade security.</p>
+    <p class="body">Earlier work spans mobile tooling (Capacitor native plugins and SwiftUI components) and web-runtime tooling (<code class="mono">debuno</code> — bringing Deno-style module resolution to Bun and Node). I organize this work through the <strong>BusyBrothers</strong> organization and have been publishing open-source software on GitHub since 2011.</p>
     <div class="rows">
       <div class="r"><span class="k">role</span><span class="v">Software Engineer</span></div>
-      <div class="r"><span class="k">focus</span><span class="v">Mobile · Tooling · Developer Experience</span></div>
-      <div class="r"><span class="k">studio</span><span class="v">BusyBrothers</span></div>
+      <div class="r"><span class="k">focus</span><span class="v">Developer Tooling · AI Engineering</span></div>
+      <div class="r"><span class="k">current</span><span class="v"><a href="https://busymate.dev" target="_blank" rel="noopener">Busymate DevTools</a> — busymate.dev</span></div>
+      <div class="r"><span class="k">organization</span><span class="v"><a href="https://github.com/BusyBrothers" target="_blank" rel="noopener">BusyBrothers</a></span></div>
       <div class="r"><span class="k">location</span><span class="v">Chisinau, Republic of Moldova</span></div>
-      <div class="r"><span class="k">github</span><span class="v"><a href="https://github.com/serebano" target="_blank" rel="noopener">@serebano</a> · member since 2011</span></div>
+      <div class="r"><span class="k">github</span><span class="v"><a href="https://github.com/serebano" target="_blank" rel="noopener">@serebano</a> · since 2011</span></div>
       <div class="r"><span class="k">contact</span><span class="v"><a href="mailto:mr.serebano@gmail.com">mr.serebano@gmail.com</a></span></div>
     </div>
   </section>
 
   <section id="work" class="fade">
-    <p class="kicker">Selected work</p>
-    <ul class="idx">
-      <li>
-        <a href="https://github.com/serebano/debuno" target="_blank" rel="noopener">
-          <span class="pn">debuno</span>
-          <span class="pd">Bring Deno module resolution to Bun &amp; Node, with RPC and error-handling libraries around it.</span>
-        </a>
-        <span class="pm"><span class="lang">JavaScript</span>runtime</span>
-      </li>
-      <li>
-        <a href="https://github.com/serebano/debuno-rpc" target="_blank" rel="noopener">
-          <span class="pn">debuno-rpc</span>
-          <span class="pd">Typed RPC layer for the debuno ecosystem.</span>
-        </a>
-        <span class="pm"><span class="lang">TypeScript</span>library</span>
-      </li>
-      <li>
-        <a href="https://github.com/serebano/SwiftUI-LazyPages" target="_blank" rel="noopener">
-          <span class="pn">SwiftUI-LazyPages</span>
-          <span class="pd">Performant, lazy-loaded paging view for SwiftUI handling large datasets efficiently.</span>
-        </a>
-        <span class="pm"><span class="lang">Swift</span>iOS</span>
-      </li>
-      <li>
-        <a href="https://github.com/serebano/capacitor-plugin-icloud-kv" target="_blank" rel="noopener">
-          <span class="pn">capacitor-plugin-icloud-kv</span>
-          <span class="pd">Capacitor plugin for iCloud key-value storage.</span>
-        </a>
-        <span class="pm"><span class="lang">Swift</span>native bridge</span>
-      </li>
-      <li>
-        <a href="https://github.com/serebano/capacitor-icloud-preferences" target="_blank" rel="noopener">
-          <span class="pn">capacitor-icloud-preferences</span>
-          <span class="pd">Sync app preferences through iCloud via Capacitor.</span>
-        </a>
-        <span class="pm"><span class="lang">Swift</span>native bridge</span>
-      </li>
-      <li>
-        <a href="https://github.com/serebano/capacitor-env-info" target="_blank" rel="noopener">
-          <span class="pn">capacitor-env-info</span>
-          <span class="pd">Environment and device info exposed to Capacitor web apps.</span>
-        </a>
-        <span class="pm"><span class="lang">Swift</span>native bridge</span>
-      </li>
-      <li>
-        <a href="https://github.com/serebano/upi" target="_blank" rel="noopener">
-          <span class="pn">upi</span>
-          <span class="pd">Universal Programming Interface.</span>
-        </a>
-        <span class="pm"><span class="lang">TypeScript</span>experiment</span>
-      </li>
-      <li>
-        <a href="https://github.com/serebano/bitbox" target="_blank" rel="noopener">
-          <span class="pn">bitbox</span>
-          <span class="pd">A reactive state toolkit.</span>
-        </a>
-        <span class="pm"><span class="lang">JavaScript</span>library</span>
-      </li>
-      <li>
-        <a href="https://github.com/BusyBrothers/claude-code-web-client" target="_blank" rel="noopener">
-          <span class="pn">claude-code-web-client</span>
-          <span class="pd">A claude.ai/code-style web client for Claude Code with live Remote Control.</span>
-        </a>
-        <span class="pm"><span class="lang">TypeScript</span>BusyBrothers</span>
-      </li>
-      <li>
-        <a href="https://github.com/serebano/ttdlapp" target="_blank" rel="noopener">
-          <span class="pn">ttdlapp</span>
-          <span class="pd">TTDL — a focused task application.</span>
-        </a>
-        <span class="pm"><span class="lang">HTML</span>app</span>
-      </li>
-    </ul>
-    <p class="body" style="margin-top:22px; font-size:.95rem"><a href="https://github.com/serebano?tab=repositories" target="_blank" rel="noopener">See all 96 repositories →</a></p>
+    <p class="kicker">Work</p>
+    <div class="feature">
+      <div class="ftop">
+        <span class="fname">Busymate DevTools</span>
+        <a class="furl" href="https://busymate.dev" target="_blank" rel="noopener">busymate.dev ↗</a>
+      </div>
+      <p class="fdesc">AI-first HTTPS traffic capture, inspection, mocking, and replay for development teams debugging across every device — unified in one realtime dashboard.</p>
+      <ul>
+        <li><span class="b">▸</span><span><strong>Capture everywhere</strong> — on-device VPN for iOS, MITM proxy for Android &amp; browsers, zero-install CLI for Chrome, and device farms at scale.</span></li>
+        <li><span class="b">▸</span><span><strong>Inspect &amp; manipulate</strong> — realtime dashboard with filtering, breakpoints, hand-editing, and scripted mocking via a sandboxed JS engine.</span></li>
+        <li><span class="b">▸</span><span><strong>AI teammate (BusyBro)</strong> — persistent memory, integrated directly into debugging workflows.</span></li>
+        <li><span class="b">▸</span><span><strong>Agent-ready</strong> — a 303-tool MCP server for Claude, Cursor, and other agents; REST &amp; WebSocket APIs for programmatic access.</span></li>
+        <li><span class="b">▸</span><span><strong>Enterprise security</strong> — database-enforced RBAC, audit trails, and an encrypted vault.</span></li>
+      </ul>
+    </div>
+    <p class="also">Earlier devtooling: <a href="https://github.com/serebano/debuno" target="_blank" rel="noopener">debuno</a> (Deno module resolution for Bun &amp; Node), Capacitor native plugins for iCloud, and SwiftUI components. Mobile-first, runtime-curious.</p>
   </section>
 
   <section id="company" class="fade">
     <p class="kicker">Company &amp; legal entity</p>
-    <p class="body">Commercial work is conducted through a registered legal entity. The details below are published openly for verification — including Apple Developer Program enrollment, which requires a matching company website and D-U-N-S® number.</p>
     <div class="entity">
       <p class="title">SERGIU TODERASCU, II</p>
       <p class="sub">Registered legal entity · sole proprietorship</p>
@@ -219,8 +171,8 @@
       </div>
     </div>
     <div class="rows" style="margin-top:24px">
-      <div class="r"><span class="k">studio</span><span class="v"><a href="https://github.com/BusyBrothers" target="_blank" rel="noopener">BusyBrothers</a> — independent software studio</span></div>
-      <div class="r"><span class="k">org</span><span class="v"><a href="https://github.com/tictapp" target="_blank" rel="noopener">tictapp</a></span></div>
+      <div class="r"><span class="k">organization</span><span class="v"><a href="https://github.com/BusyBrothers" target="_blank" rel="noopener">BusyBrothers</a></span></div>
+      <div class="r"><span class="k">product</span><span class="v"><a href="https://busymate.dev" target="_blank" rel="noopener">busymate.dev</a></span></div>
       <div class="r"><span class="k">orcid</span><span class="v"><a href="https://orcid.org/0009-0006-2072-039X" target="_blank" rel="noopener">0009-0006-2072-039X</a></span></div>
     </div>
   </section>
@@ -228,9 +180,10 @@
   <section class="contact fade" style="border-top:1px solid var(--line)">
     <p class="kicker">Contact</p>
     <h2>Let's build something.</h2>
-    <p>Open to freelance engineering, mobile plugin work, and tooling collaborations. Remote-friendly, based in Chisinau.</p>
+    <p>Open to devtooling, AI engineering, and agent-integration work. Remote-friendly, based in Chisinau.</p>
     <div class="links">
       <a href="mailto:mr.serebano@gmail.com">mr.serebano@gmail.com</a>
+      <a href="https://busymate.dev" target="_blank" rel="noopener">busymate.dev</a>
       <a href="https://github.com/serebano" target="_blank" rel="noopener">github.com/serebano</a>
       <a href="https://twitter.com/MrSerebano" target="_blank" rel="noopener">@MrSerebano</a>
     </div>
