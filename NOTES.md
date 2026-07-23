@@ -104,7 +104,6 @@ Direction taken (and revised) over the session:
   panel if delivery needs checking.
 - **Company & legal entity** section keeps the full SERGIU TODERASCU, AI block (legal name, D-U-N-S®,
   address, city, postcode, country) plus a footer repeat, so the verification info appears site-wide.
-  Subline clarifies sole proprietorship / individual enterprise (Moldova).
 
 ## Editing the site
 
