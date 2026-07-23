@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://serebano.com/
+Host: https://serebano.com

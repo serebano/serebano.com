@@ -4,40 +4,152 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Sergiu Toderascu — Software Engineer · Developer Tooling &amp; AI</title>
-<meta name="description" content="Sergiu Toderascu — software engineer building developer tooling and AI engineering systems. Lead of Busymate DevTools (busymate.dev). Operating entity: SERGIU TODERASCU, II." />
+<meta name="description" content="Sergiu Toderascu — software engineer building developer tooling and AI engineering systems. Lead of Busymate DevTools (busymate.dev). Operating entity: SERGIU TODERASCU, AI." />
 <meta name="author" content="Sergiu Toderascu" />
+<meta name="theme-color" content="#0b0d12" media="(prefers-color-scheme: dark)" />
+<meta name="theme-color" content="#fbfbf9" media="(prefers-color-scheme: light)" />
+<link rel="canonical" href="https://serebano.com/" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://serebano.com/" />
+<meta property="og:title" content="Sergiu Toderascu — Software Engineer · Developer Tooling &amp; AI" />
+<meta property="og:description" content="Software engineer building developer tooling and AI engineering systems. Lead of Busymate DevTools. Operating entity: SERGIU TODERASCU, AI." />
+<meta property="og:image" content="https://serebano.com/og.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Sergiu Toderascu — serebano.com" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:site_name" content="serebano.com" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Sergiu Toderascu — Software Engineer · Developer Tooling &amp; AI" />
+<meta name="twitter:description" content="Software engineer building developer tooling and AI engineering systems. Lead of Busymate DevTools." />
+<meta name="twitter:image" content="https://serebano.com/og.png" />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230b0d12'/%3E%3Ctext x='50' y='72' font-family='ui-monospace,monospace' font-size='62' font-weight='600' text-anchor='middle' fill='%23e6e9ef'%3ES%3C/text%3E%3C/svg%3E" />
+<script>
+  /* Apply theme before paint to avoid flash */
+  (function () {
+    try {
+      var t = localStorage.getItem("theme");
+      if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  })();
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://serebano.com/#person",
+      "name": "Sergiu Toderascu",
+      "url": "https://serebano.com/",
+      "email": "hi@serebano.com",
+      "jobTitle": "Software Engineer",
+      "worksFor": { "@id": "https://serebano.com/#organization" },
+      "sameAs": [
+        "https://github.com/serebano",
+        "https://orcid.org/0009-0006-2072-039X",
+        "https://busymate.dev"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Chisinau",
+        "addressCountry": "MD"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://serebano.com/#organization",
+      "name": "SERGIU TODERASCU, AI",
+      "legalName": "SERGIU TODERASCU, AI",
+      "url": "https://serebano.com/",
+      "founder": { "@id": "https://serebano.com/#person" },
+      "identifier": {
+        "@type": "PropertyValue",
+        "name": "D-U-N-S",
+        "value": "933919838"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "21/1, apt. 74, Nicolae Dimo str.",
+        "addressLocality": "Chisinau",
+        "postalCode": "MD-2068",
+        "addressCountry": "MD"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://serebano.com/#website",
+      "url": "https://serebano.com/",
+      "name": "serebano.com",
+      "publisher": { "@id": "https://serebano.com/#person" },
+      "image": "https://serebano.com/og.png"
+    }
+  ]
+}
+</script>
 <style>
   :root{
     --bg:#0b0d12; --ink:#e6e9ef; --muted:#8b94a4; --dim:#5b6473;
     --line:#1c2230; --accent:#cfe9d8; --accent2:#9fb6d1;
     --max:760px; --mono:ui-monospace,"SF Mono",SFMono,Menlo,Consolas,monospace;
+    color-scheme: dark;
   }
   @media (prefers-color-scheme: light){
-    :root{ --bg:#fbfbf9; --ink:#11151c; --muted:#5a6473; --dim:#9aa3b2;
-      --line:#e7e9ec; --accent:#0a7d4f; --accent2:#2a5db0; }
+    :root:not([data-theme="dark"]){
+      --bg:#fbfbf9; --ink:#11151c; --muted:#5a6473; --dim:#9aa3b2;
+      --line:#e7e9ec; --accent:#0a7d4f; --accent2:#2a5db0;
+      color-scheme: light;
+    }
   }
+  :root[data-theme="light"]{
+    --bg:#fbfbf9; --ink:#11151c; --muted:#5a6473; --dim:#9aa3b2;
+    --line:#e7e9ec; --accent:#0a7d4f; --accent2:#2a5db0;
+    color-scheme: light;
+  }
+  :root[data-theme="dark"]{
+    --bg:#0b0d12; --ink:#e6e9ef; --muted:#8b94a4; --dim:#5b6473;
+    --line:#1c2230; --accent:#cfe9d8; --accent2:#9fb6d1;
+    color-scheme: dark;
+  }
+
   *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
   html,body{margin:0;padding:0}
   body{
     background:var(--bg); color:var(--ink);
     font:17px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,system-ui,sans-serif;
     -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
   }
-  a{color:inherit; text-decoration:none; border-bottom:1px solid color-mix(in oklab,var(--accent) 55%,transparent); transition:border-color .15s}
+  a{color:inherit; text-decoration:none; border-bottom:1px solid color-mix(in oklab,var(--accent) 55%,transparent); transition:border-color .15s, color .15s}
   a:hover{border-color:var(--accent)}
+  a:focus-visible{outline:2px solid var(--accent2); outline-offset:3px; border-radius:2px}
+  code, .mono{font-family:var(--mono); font-size:.92em}
   .wrap{max-width:var(--max); margin:0 auto; padding:0 26px}
+  .skip{position:absolute; left:12px; top:12px; padding:8px 14px; background:var(--ink); color:var(--bg); border-radius:8px; font-size:.9rem; font-weight:600; z-index:100; transform:translateY(-140%); transition:transform .15s}
+  .skip:focus{transform:none; border:0; outline:2px solid var(--accent2); outline-offset:2px}
 
-  .mast{display:flex; align-items:baseline; justify-content:space-between; padding:26px 0; border-bottom:1px solid var(--line)}
-  .mast .name{font-weight:600; letter-spacing:-.01em}
-  .mast .meta{font-family:var(--mono); font-size:.8rem; color:var(--muted); display:flex; gap:18px; flex-wrap:wrap}
-  .mast .meta a{border:0}
-  .mast .meta a:hover{color:var(--accent)}
+  .mast{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:22px 0; border-bottom:1px solid var(--line); flex-wrap:wrap}
+  .mast .name{font-weight:600; letter-spacing:-.01em; border:0; white-space:nowrap}
+  .mast .name:hover{color:var(--accent)}
+  .mast-right{display:flex; align-items:center; gap:18px; flex-wrap:wrap}
+  .mast .nav{font-family:var(--mono); font-size:.8rem; color:var(--muted); display:flex; gap:16px; flex-wrap:wrap; align-items:center}
+  .mast .nav a{border:0}
+  .mast .nav a:hover{color:var(--accent)}
+  .mast .nav a.ext{color:var(--dim)}
+  .theme-btn{
+    appearance:none; border:1px solid var(--line); background:transparent; color:var(--muted);
+    font-family:var(--mono); font-size:.74rem; letter-spacing:.04em; padding:6px 10px; border-radius:999px;
+    cursor:pointer; line-height:1; transition:color .15s, border-color .15s, background .15s;
+  }
+  .theme-btn:hover{color:var(--ink); border-color:var(--muted)}
+  .theme-btn:focus-visible{outline:2px solid var(--accent2); outline-offset:3px}
 
   .hero{padding:96px 0 56px}
   .hero h1{font-size:clamp(2.1rem,6vw,3.4rem); line-height:1.1; letter-spacing:-.025em; font-weight:700; margin:0}
   .hero h1 em{font-style:normal; color:var(--muted)}
   .hero p.lede{max-width:580px; color:var(--muted); font-size:1.12rem; margin:28px 0 0; line-height:1.65}
+  .hero p.lede strong{color:var(--ink); font-weight:600}
 
   .stats{display:flex; gap:38px; flex-wrap:wrap; margin-top:42px}
   .stat .n{font-size:1.04rem; font-weight:600; color:var(--ink)}
@@ -57,26 +169,43 @@
   .rows .k{color:var(--dim); font-family:var(--mono); font-size:.82rem; padding-top:2px}
   .rows .v{color:var(--ink)}
   .rows .v a{color:var(--accent2)}
+  .rows.spaced{margin-top:24px}
   @media (max-width:520px){ .rows .r{grid-template-columns:1fr; gap:4px} .rows .k{padding-top:0} }
 
   /* feature spotlight */
   .feature{border:1px solid var(--line); border-radius:16px; padding:30px; margin-bottom:18px}
   .feature .ftop{display:flex; align-items:baseline; justify-content:space-between; gap:16px; flex-wrap:wrap}
-  .feature .fname{font-size:1.25rem; font-weight:600; letter-spacing:-.01em}
-  .feature .furl{font-family:var(--mono); font-size:.92rem; color:var(--accent2)}
-  .feature .fdesc{color:var(--muted); font-size:1.04rem; margin:14px 0 22px; max-width:56ch}
-  .feature ul{margin:0; padding:0; list-style:none}
+  .feature .fname{font-size:1.25rem; font-weight:600; letter-spacing:-.01em; margin:0}
+  .feature .furl{font-family:var(--mono); font-size:.92rem; color:var(--accent2); border:0}
+  .feature .furl:hover{color:var(--accent)}
+  .feature .fdesc{color:var(--muted); font-size:1.04rem; margin:14px 0 0; max-width:56ch}
+  .feature .proofs{display:flex; flex-wrap:wrap; gap:8px; margin:18px 0 8px}
+  .feature .proof{
+    font-family:var(--mono); font-size:.74rem; letter-spacing:.02em;
+    color:var(--muted); border:1px solid var(--line); border-radius:999px; padding:6px 12px;
+    background:color-mix(in oklab,var(--accent) 5%,transparent);
+  }
+  .feature ul{margin:14px 0 0; padding:0; list-style:none}
   .feature li{display:grid; grid-template-columns:18px 1fr; gap:12px; padding:11px 0; border-top:1px solid var(--line); color:var(--muted); font-size:.98rem}
   .feature li:first-child{border-top:0}
   .feature li .b{color:var(--accent)}
   .feature li strong{color:var(--ink); font-weight:600}
 
-  .also{font-size:.96rem; color:var(--muted); margin-top:6px}
-  .also a{color:var(--accent2)}
+  .cards{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:4px}
+  @media (max-width:560px){ .cards{grid-template-columns:1fr} }
+  .card{border:1px solid var(--line); border-radius:14px; padding:22px 22px 20px; display:flex; flex-direction:column; gap:8px}
+  .card .ctop{display:flex; align-items:baseline; justify-content:space-between; gap:12px}
+  .card h3{font-size:1.02rem; font-weight:600; margin:0; letter-spacing:-.01em}
+  .card .curl{font-family:var(--mono); font-size:.78rem; color:var(--accent2); border:0; white-space:nowrap}
+  .card .curl:hover{color:var(--accent)}
+  .card p{margin:0; color:var(--muted); font-size:.94rem; line-height:1.55}
+  .card .tag{font-family:var(--mono); font-size:.72rem; color:var(--dim); letter-spacing:.04em; text-transform:uppercase; margin-top:4px}
 
   .entity{background:color-mix(in oklab,var(--accent) 4%,transparent); border:1px solid var(--line); border-radius:14px; padding:30px; margin-top:8px}
-  .entity .title{font-size:1.12rem; font-weight:600; margin:0}
-  .entity .sub{color:var(--muted); font-size:.92rem; margin:4px 0 22px; font-family:var(--mono)}
+  .entity .title{font-size:1.12rem; font-weight:600; margin:0; letter-spacing:-.01em}
+  .entity .sub{color:var(--muted); font-size:.92rem; margin:4px 0 10px; font-family:var(--mono)}
+  .entity .note{color:var(--dim); font-size:.88rem; margin:0 0 20px; line-height:1.55}
+  .entity .rows .v.mono{font-size:.98rem}
 
   .contact{padding:80px 0 70px; border-top:1px solid var(--line)}
   .contact h2{font-size:clamp(1.6rem,4vw,2.2rem); letter-spacing:-.02em; margin-bottom:14px}
@@ -86,45 +215,75 @@
   .links a:hover{color:var(--accent)}
 
   footer{border-top:1px solid var(--line); padding:30px 0 50px; color:var(--dim); font-size:.84rem; line-height:1.7}
-  footer .wrap{display:flex; justify-content:space-between; gap:24px; flex-wrap:wrap}
-  footer .legal{max-width:520px}
+  footer .wrap{display:flex; justify-content:space-between; gap:24px; flex-wrap:wrap; align-items:flex-start}
+  footer .legal{max-width:560px}
   footer .legal strong{color:var(--muted)}
+  footer .fnav{font-family:var(--mono); font-size:.78rem; display:flex; gap:16px; flex-wrap:wrap}
+  footer .fnav a{border:0; color:var(--dim)}
+  footer .fnav a:hover{color:var(--accent)}
+  ::selection{background:color-mix(in oklab,var(--accent2) 35%,transparent)}
 
   .fade{opacity:0; transform:translateY(10px); transition:opacity .5s ease, transform .5s ease}
   .fade.in{opacity:1; transform:none}
   @media (prefers-reduced-motion: reduce){ .fade{opacity:1; transform:none; transition:none} }
+
+  /* print */
+  @media print{
+    :root, :root[data-theme="dark"], :root[data-theme="light"]{
+      --bg:#fff; --ink:#000; --muted:#333; --dim:#555; --line:#ccc;
+      --accent:#000; --accent2:#000; color-scheme: light;
+    }
+    body{font-size:12pt; line-height:1.45; background:#fff; color:#000}
+    .skip, .theme-btn, .fade{opacity:1 !important; transform:none !important}
+    .mast{border-bottom:1px solid #ccc; padding:0 0 12pt}
+    .hero{padding:18pt 0 12pt}
+    .hero h1{font-size:22pt}
+    section, .contact{padding:14pt 0; border-top:1px solid #ccc; break-inside:avoid}
+    .feature, .card, .entity{border:1px solid #ccc; border-radius:0; background:transparent; break-inside:avoid}
+    .feature .proof{border-color:#ccc; background:transparent}
+    a{border:0; color:#000; text-decoration:underline}
+    .mast .nav a.ext, footer .fnav{display:none}
+    footer{border-top:1px solid #ccc; color:#333}
+    .feature .furl::after, .card .curl::after{content:" (" attr(href) ")"; font-size:9pt; color:#555}
+  }
 </style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 
 <div class="wrap">
-  <div class="mast">
-    <span class="name">Sergiu Toderascu</span>
-    <span class="meta">
-      <a href="https://busymate.dev" target="_blank" rel="noopener">busymate.dev</a>
-      <a href="https://github.com/serebano" target="_blank" rel="noopener">github</a>
-      <a href="https://orcid.org/0009-0006-2072-039X" target="_blank" rel="noopener">orcid</a>
-    </span>
-  </div>
+  <header class="mast">
+    <a class="name" href="/">Sergiu Toderascu</a>
+    <div class="mast-right">
+      <nav class="nav" aria-label="Primary">
+        <a href="#about">about</a>
+        <a href="#work">work</a>
+        <a href="#company">company</a>
+        <a href="#contact">contact</a>
+        <a class="ext" href="https://github.com/serebano" target="_blank" rel="noopener">github</a>
+      </nav>
+      <button type="button" class="theme-btn" id="theme-btn" aria-label="Toggle color theme" title="Toggle theme">theme</button>
+    </div>
+  </header>
 </div>
 
-<main class="wrap">
+<main id="main" class="wrap">
   <header class="hero">
     <h1>Software engineer<br><em>learning by breaking things.</em></h1>
-    <p class="lede">I build developer tooling and AI-powered engineering workflows for teams shipping across mobile, web, and backend. Currently leading <strong style="color:var(--ink)">Busymate DevTools</strong> — an AI-first platform that captures, inspects, mocks, and replays HTTPS traffic from every device into one live dashboard.</p>
-    <div class="stats">
-      <div class="stat"><div class="n">15+ years</div><div class="l">building software</div></div>
-      <div class="stat"><div class="n">Developer tooling</div><div class="l">mobile · web · runtime</div></div>
-      <div class="stat"><div class="n">AI engineering</div><div class="l">agents · MCP · integrations</div></div>
-      <div class="stat"><div class="n">Busymate DevTools</div><div class="l">current work · busymate.dev</div></div>
+    <p class="lede">I build developer tooling and AI-powered engineering workflows for teams shipping across mobile, web, and backend. Currently leading <strong>Busymate DevTools</strong> — an AI-first platform that captures, inspects, mocks, and replays HTTPS traffic from every device into one live dashboard.</p>
+    <div class="stats" role="list">
+      <div class="stat" role="listitem"><div class="n">15+ years</div><div class="l">building software</div></div>
+      <div class="stat" role="listitem"><div class="n">Developer tooling</div><div class="l">mobile · web · runtime</div></div>
+      <div class="stat" role="listitem"><div class="n">AI engineering</div><div class="l">agents · MCP · integrations</div></div>
+      <div class="stat" role="listitem"><div class="n">Busymate DevTools</div><div class="l">current work · busymate.dev</div></div>
     </div>
   </header>
 
-  <section id="about" class="fade">
-    <p class="kicker">About</p>
+  <section id="about" class="fade" aria-labelledby="about-kicker">
+    <p class="kicker" id="about-kicker">About</p>
     <p class="body">I'm a software engineer focused on <strong>developer tooling</strong> and <strong>AI engineering</strong> — building the systems that make complex software legible and controllable. The through-line of my work is closing the loop between what a system is doing and what you can observe and change about it: traffic inspection, runtime tooling, and agent-ready integrations.</p>
     <p class="body">I lead development of <a href="https://busymate.dev" target="_blank" rel="noopener">Busymate DevTools</a>, an AI-first platform for capturing, inspecting, mocking, and replaying HTTPS traffic across iPhones, Android, browsers, and device farms — unified in one realtime dashboard, with an AI teammate (BusyBro), a large MCP tool surface, REST/WebSocket APIs, and enterprise-grade security.</p>
-    <p class="body">Earlier work spans mobile tooling (Capacitor native plugins and SwiftUI components) and web-runtime tooling (<code class="mono">debuno</code> — bringing Deno-style module resolution to Bun and Node). I organize this work through the <strong>BusyBrothers</strong> team and have been publishing open-source software on GitHub since 2011.</p>
+    <p class="body">Earlier work spans mobile tooling (Capacitor native plugins and SwiftUI components) and web-runtime tooling (<code>debuno</code> — bringing Deno-style module resolution to Bun and Node). I organize this work through the <strong>BusyBrothers</strong> team and have been publishing open-source software on GitHub since 2011.</p>
     <div class="rows">
       <div class="r"><span class="k">role</span><span class="v">Software Engineer</span></div>
       <div class="r"><span class="k">focus</span><span class="v">Developer Tooling · AI Engineering</span></div>
@@ -136,48 +295,73 @@
     </div>
   </section>
 
-  <section id="work" class="fade">
-    <p class="kicker">Work</p>
-    <div class="feature">
+  <section id="work" class="fade" aria-labelledby="work-kicker">
+    <p class="kicker" id="work-kicker">Work</p>
+    <article class="feature">
       <div class="ftop">
-        <span class="fname">Busymate DevTools</span>
+        <h2 class="fname">Busymate DevTools</h2>
         <a class="furl" href="https://busymate.dev" target="_blank" rel="noopener">busymate.dev ↗</a>
       </div>
       <p class="fdesc">AI-first HTTPS traffic capture, inspection, mocking, and replay for development teams debugging across every device — unified in one realtime dashboard.</p>
+      <div class="proofs" aria-label="Highlights">
+        <span class="proof">iOS · Android · browsers · device farms</span>
+        <span class="proof">303-tool MCP server</span>
+        <span class="proof">BusyBro AI teammate</span>
+        <span class="proof">RBAC · audit · vault</span>
+      </div>
       <ul>
-        <li><span class="b">▸</span><span><strong>Capture everywhere</strong> — on-device VPN for iOS, MITM proxy for Android &amp; browsers, zero-install CLI for Chrome, and device farms at scale.</span></li>
-        <li><span class="b">▸</span><span><strong>Inspect &amp; manipulate</strong> — realtime dashboard with filtering, breakpoints, hand-editing, and scripted mocking via a sandboxed JS engine.</span></li>
-        <li><span class="b">▸</span><span><strong>AI teammate (BusyBro)</strong> — persistent memory, integrated directly into debugging workflows.</span></li>
-        <li><span class="b">▸</span><span><strong>Agent-ready</strong> — a 303-tool MCP server for Claude, Cursor, and other agents; REST &amp; WebSocket APIs for programmatic access.</span></li>
-        <li><span class="b">▸</span><span><strong>Enterprise security</strong> — database-enforced RBAC, audit trails, and an encrypted vault.</span></li>
+        <li><span class="b" aria-hidden="true">▸</span><span><strong>Capture everywhere</strong> — on-device VPN for iOS, MITM proxy for Android &amp; browsers, zero-install CLI for Chrome, and device farms at scale.</span></li>
+        <li><span class="b" aria-hidden="true">▸</span><span><strong>Inspect &amp; manipulate</strong> — realtime dashboard with filtering, breakpoints, hand-editing, and scripted mocking via a sandboxed JS engine.</span></li>
+        <li><span class="b" aria-hidden="true">▸</span><span><strong>AI teammate (BusyBro)</strong> — persistent memory, integrated directly into debugging workflows.</span></li>
+        <li><span class="b" aria-hidden="true">▸</span><span><strong>Agent-ready</strong> — a 303-tool MCP server for Claude, Cursor, and other agents; REST &amp; WebSocket APIs for programmatic access.</span></li>
+        <li><span class="b" aria-hidden="true">▸</span><span><strong>Enterprise security</strong> — database-enforced RBAC, audit trails, and an encrypted vault.</span></li>
       </ul>
+    </article>
+
+    <div class="cards">
+      <article class="card">
+        <div class="ctop">
+          <h3>debuno</h3>
+          <a class="curl" href="https://github.com/serebano/debuno" target="_blank" rel="noopener">github ↗</a>
+        </div>
+        <p>Deno-style module resolution for Bun and Node — runtime-curious tooling for polyglot JS environments.</p>
+        <span class="tag">runtime · modules</span>
+      </article>
+      <article class="card">
+        <div class="ctop">
+          <h3>Mobile tooling</h3>
+          <a class="curl" href="https://github.com/serebano" target="_blank" rel="noopener">github ↗</a>
+        </div>
+        <p>Capacitor native plugins (including iCloud) and SwiftUI components — mobile-first developer tooling.</p>
+        <span class="tag">ios · capacitor · swiftui</span>
+      </article>
     </div>
-    <p class="also">Earlier devtooling: <a href="https://github.com/serebano/debuno" target="_blank" rel="noopener">debuno</a> (Deno module resolution for Bun &amp; Node), Capacitor native plugins for iCloud, and SwiftUI components. Mobile-first, runtime-curious.</p>
   </section>
 
-  <section id="company" class="fade">
-    <p class="kicker">Company &amp; legal entity</p>
+  <section id="company" class="fade" aria-labelledby="company-kicker">
+    <p class="kicker" id="company-kicker">Company &amp; legal entity</p>
     <div class="entity">
-      <p class="title">SERGIU TODERASCU, II</p>
+      <p class="title">SERGIU TODERASCU, AI</p>
       <p class="sub">Registered legal entity · sole proprietorship</p>
+      <p class="note">Individual enterprise registered in the Republic of Moldova. Public company details below are published for verification (including D-U-N-S® and Apple Developer Program company enrollment).</p>
       <div class="rows">
-        <div class="r"><span class="k">legal name</span><span class="v">SERGIU TODERASCU, II</span></div>
-        <div class="r"><span class="k">d-u-n-s®</span><span class="v" style="font-family:var(--mono)">933919838</span></div>
+        <div class="r"><span class="k">legal name</span><span class="v">SERGIU TODERASCU, AI</span></div>
+        <div class="r"><span class="k">d-u-n-s®</span><span class="v mono">933919838</span></div>
         <div class="r"><span class="k">address</span><span class="v">21/1, apt. 74, Nicolae Dimo str.</span></div>
         <div class="r"><span class="k">city</span><span class="v">Chisinau</span></div>
-        <div class="r"><span class="k">postcode</span><span class="v" style="font-family:var(--mono)">MD-2068</span></div>
+        <div class="r"><span class="k">postcode</span><span class="v mono">MD-2068</span></div>
         <div class="r"><span class="k">country</span><span class="v">Republic of Moldova</span></div>
       </div>
     </div>
-    <div class="rows" style="margin-top:24px">
+    <div class="rows spaced">
       <div class="r"><span class="k">team</span><span class="v"><a href="https://github.com/BusyBrothers" target="_blank" rel="noopener">BusyBrothers</a></span></div>
       <div class="r"><span class="k">product</span><span class="v"><a href="https://busymate.dev" target="_blank" rel="noopener">busymate.dev</a></span></div>
       <div class="r"><span class="k">orcid</span><span class="v"><a href="https://orcid.org/0009-0006-2072-039X" target="_blank" rel="noopener">0009-0006-2072-039X</a></span></div>
     </div>
   </section>
 
-  <section class="contact fade" style="border-top:1px solid var(--line)">
-    <p class="kicker">Contact</p>
+  <section id="contact" class="contact fade" aria-labelledby="contact-kicker">
+    <p class="kicker" id="contact-kicker">Contact</p>
     <h2>Let's build something.</h2>
     <p>Open to devtooling, AI engineering, and agent-integration work. Remote-friendly, based in Chisinau.</p>
     <div class="links">
@@ -192,17 +376,66 @@
   <div class="wrap">
     <div class="legal">
       © <span id="yr">2026</span> Sergiu Toderascu.<br>
-      Operating entity: <strong>SERGIU TODERASCU, II</strong> · D-U-N-S® <span style="font-family:var(--mono)">933919838</span> · 21/1, apt. 74, Nicolae Dimo str., Chisinau, MD-2068, Republic of Moldova.
+      Operating entity: <strong>SERGIU TODERASCU, AI</strong> · D-U-N-S® <span class="mono">933919838</span> · 21/1, apt. 74, Nicolae Dimo str., Chisinau, MD-2068, Republic of Moldova.
     </div>
+    <nav class="fnav" aria-label="Footer">
+      <a href="#about">about</a>
+      <a href="#work">work</a>
+      <a href="#company">company</a>
+      <a href="#contact">contact</a>
+      <a href="https://busymate.dev" target="_blank" rel="noopener">busymate</a>
+    </nav>
   </div>
 </footer>
 
 <script>
-  document.getElementById('yr').textContent = new Date().getFullYear();
-  var io = new IntersectionObserver(function(es){
-    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, {rootMargin:'0px 0px -6% 0px'});
-  document.querySelectorAll('.fade').forEach(function(el){ io.observe(el); });
+  document.getElementById("yr").textContent = new Date().getFullYear();
+
+  /* Theme toggle: system default, optional light/dark override */
+  (function () {
+    var btn = document.getElementById("theme-btn");
+    var root = document.documentElement;
+    function label() {
+      var t = root.getAttribute("data-theme");
+      if (t === "light") return "light";
+      if (t === "dark") return "dark";
+      return "system";
+    }
+    function sync() {
+      btn.textContent = label();
+      btn.setAttribute("aria-label", "Color theme: " + label() + ". Click to cycle.");
+      var meta = document.querySelectorAll('meta[name="theme-color"]');
+      var dark = root.getAttribute("data-theme") === "dark" ||
+        (!root.getAttribute("data-theme") && window.matchMedia("(prefers-color-scheme: dark)").matches);
+      meta.forEach(function (m) {
+        if (m.media && m.media.indexOf("dark") !== -1) m.content = dark ? "#0b0d12" : "#0b0d12";
+        if (m.media && m.media.indexOf("light") !== -1) m.content = dark ? "#fbfbf9" : "#fbfbf9";
+      });
+    }
+    btn.addEventListener("click", function () {
+      var cur = root.getAttribute("data-theme");
+      var next = cur === "light" ? "dark" : cur === "dark" ? null : "light";
+      if (next) root.setAttribute("data-theme", next);
+      else root.removeAttribute("data-theme");
+      try {
+        if (next) localStorage.setItem("theme", next);
+        else localStorage.removeItem("theme");
+      } catch (e) {}
+      sync();
+    });
+    sync();
+  })();
+
+  /* Scroll reveal */
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) {
+      if (e.isIntersecting) {
+        e.target.classList.add("in");
+        io.unobserve(e.target);
+      }
+    });
+  }, { rootMargin: "0px 0px -6% 0px" });
+  document.querySelectorAll(".fade").forEach(function (el) { io.observe(el); });
 </script>
 </body>
 </html>

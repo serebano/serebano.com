@@ -5,17 +5,20 @@ A record of what was built, how, and the key decisions. Maintained alongside the
 ## What this is
 
 A personal + company website for **Sergiu Toderascu** (`@serebano` on GitHub). It also serves as the
-**public company website for the registered legal entity SERGIU TODERASCU, II** (D-U-N-S® 933919838),
+**public company website for the registered legal entity SERGIU TODERASCU, AI** (D-U-N-S® 933919838),
 published openly for verification — including the Apple Developer Program individual → company
 account conversion, which requires a matching live company website and D-U-N-S® number.
 
 ## Tech
 
 - A single, dependency-free static `index.html`. No build step, no frameworks, no JS dependencies.
-- Inline CSS + a tiny inline IntersectionObserver script for scroll reveal (respects
-  `prefers-reduced-motion`).
-- Dark-by-default with a light-mode fallback via `prefers-color-scheme`.
+- Inline CSS + small inline scripts: theme toggle (`localStorage` + `data-theme`), year stamp,
+  IntersectionObserver scroll reveal (respects `prefers-reduced-motion`).
+- Dark-by-default with light-mode via `prefers-color-scheme`, plus a manual system → light → dark cycle.
+- Open Graph / Twitter cards + `og.png` (1200×630), JSON-LD (Person / Organization / WebSite).
+- Print stylesheet for verification printouts.
 - Custom SVG favicon embedded as a data URI.
+- Ops files: `robots.txt`, `.well-known/security.txt` (+ root `security.txt`).
 - Why static + dependency-free: maximum reliability and zero maintenance. Apple's verification needs a
   stable, always-up company website; a single file with no build step can't break and deploys anywhere.
 
@@ -23,7 +26,8 @@ account conversion, which requires a matching live company website and D-U-N-S®
 
 - **Public repo:** https://github.com/serebano/serebano.com
 - Branch: `main`. Pushed via the `gh` CLI authenticated as `serebano`.
-- Files: `index.html`, `CNAME` (→ `serebano.com`), `README.md`, `NOTES.md`, `.gitignore`.
+- Files: `index.html`, `og.png`, `CNAME` (→ `serebano.com`), `robots.txt`, `security.txt`,
+  `.well-known/security.txt`, `README.md`, `NOTES.md`, `.gitignore`.
 
 ## Hosting: GitHub Pages
 
@@ -95,10 +99,12 @@ Direction taken (and revised) over the session:
 - **BusyBrothers** is referred to as a **team** (not "studio" / "organization").
 - **Removed:** the open-source repository listing (no repo index), the Twitter handle, and the
   Apple-verification explainer paragraph from the Company section.
-- **Contact:** `hi@serebano.com` (note: mail routing for the apex domain — MX records / Cloudflare Email
-  Routing forwarding — is a separate setup task if this address should actually receive mail).
-- **Company & legal entity** section keeps the full SERGIU TODERASCU, II block (legal name, D-U-N-S®,
+- **Contact:** `hi@serebano.com` — MX points at Namecheap Email Forwarding
+  (`eforward*.registrar-servers.com`) with matching SPF; confirm the forward target in the Namecheap
+  panel if delivery needs checking.
+- **Company & legal entity** section keeps the full SERGIU TODERASCU, AI block (legal name, D-U-N-S®,
   address, city, postcode, country) plus a footer repeat, so the verification info appears site-wide.
+  Subline clarifies sole proprietorship / individual enterprise (Moldova).
 
 ## Editing the site
 
