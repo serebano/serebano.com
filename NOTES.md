@@ -118,4 +118,4 @@ git push origin main
 GitHub Pages auto-rebuilds from `main` on push; changes are live at https://serebano.com within a minute.
 ## Personal phone — 2026-10-07
 
-Owner supplied and authorized publication of +37361122113. Displayed as personal phone in About and Contact, with tel links and Person JSON-LD. This is separate from the US Twilio number used by Busymate AI and WhatsApp Business.
+Owner supplied and authorized publication of +37361122113. Displayed as developer contact in About and Contact, with tel links and Person JSON-LD. This is separate from the US Twilio number used by Busymate AI and WhatsApp Business.
